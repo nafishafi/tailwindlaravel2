@@ -6,12 +6,13 @@
         <h2 class="mb-1 text-3xl tracking-tight font-bold text-gray-900">{{ $post ['title'] }}</h2>
       </a>
       <div class="text-base text-gray-500">
-        <a href="#">{{ $post['author'] }}</a> | 15 Februari 2025
+        <a href="#">{{ $post['author'] }}</a> | {{ $post->created_at->diffForHumans() }}
       </div>
       <p class="my-4 font-light">{{ $post ['body'] }}</p>
       <a href="/posts/{{ $post['slug'] }}" class="font-medium text-blue-500 hover:underline">Read more &raquo;</a>
     </article>
   @endforeach
   <h3 class="text-xl">Welcome to my blog</h3>
+  
 </x-layout>
 

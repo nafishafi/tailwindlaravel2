@@ -14,25 +14,7 @@ Route::get('/posts', function () {
     return view('posts', ['title' => 'Blog', 'posts' => Post::all()]);
 });
 
-// [
-//     'id' => 1,
-//     'slug' => 'judul-artikel-1',
-//     'title' => 'Judul artikel 1',
-//     'author' => 'Muhammad Nafis Hafi',
-//     'body' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. At soluta praesentium dolorum accusamus sequi maxime amet natus reprehenderit vel fuga.'
-// ],
-// [
-//     'id' => 2,
-//     'slug' => 'judul-artikel-2',
-//     'title' => 'Judul artikel 2',
-//     'author' => 'Muhammad Nafis Hafi',
-//     'body' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dolor, at voluptatibus mollitia iusto deserunt veniam? Illo aut iusto nemo ullam. Animi illo quasi sed atque tenetur, libero aperiam. Corporis.'
-// ],
 Route::get('/posts/{post:slug}', function(Post $post){
-
-    // $post = Arr::first(Post::all(), function ($post) use ($slug){
-    //     return $post['slug'] == $slug;
-    // });
     return view('post', ['title' => 'Single Post', 'post' => $post]);
 });
 Route::get('/contact', function () {
