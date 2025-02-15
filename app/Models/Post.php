@@ -1,16 +1,13 @@
 <?php 
 namespace App\Models;
 
-class Post
+use Illuminate\Support\Arr;
+use Illuminate\Database\Eloquent\Model;
+
+class Post extends Model // tabel post
 {
-    public static function all()
-    {
-        return [
-            [
-                
-            ]
-            ];
-    }
+    // protected $table = 'blog_posts'; // Jika nama tabel berbeda
+    // protected $primaryKey = 'post_id'; // Jika nama primary key berbeda
 }    
 
 ?>
