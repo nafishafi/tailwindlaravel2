@@ -13,6 +13,8 @@ class Post extends Model // tabel post
     // protected $primaryKey = 'post_id'; // Jika nama primary key berbeda
     protected $fillable = ['title', 'author', 'slug', 'body'];
 
+    protected $with = ['author', 'category'];
+
     public function author(): BelongsTo
     {
         return $this->belongsTo(User::class);
